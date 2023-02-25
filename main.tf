@@ -59,5 +59,5 @@ resource "github_actions_secret" "repo_secret" {
 
   repository      = each.value.name
   secret_name     = "NUGET_PAT"
-  plaintext_value = var.nuget_pat
+  plaintext_value = var.NUGET_PAT
 }
