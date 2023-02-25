@@ -1,0 +1,36 @@
+repo_list:
+  - name: component-servicehelper
+    description: Service Helper Component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
+  - name: component-settings
+    description: Settings Component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
+  - name: component-email
+    description: Email Component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
+  - name: component-sms
+    description: Sms Component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
+  - name: component-externalapis
+    description: External Apis Component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
+  - name: component-dataaccess
+    description: Data Access component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
+  - name: component-payments
+    description: Payments Component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
