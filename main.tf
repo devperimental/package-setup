@@ -1,6 +1,6 @@
 # This file decodes the yaml file and makes it into a terraform map than can then be used with for_each statements
 locals {
-  repo_list = yamldecode(file("${path.root}/conf/${var.config_file}"))["repo_list"]
+  repo_list = yamldecode(file("${path.root}/${var.config_file}"))["repo_list"]
 }
 
 resource "github_repository" "template-repo" {
