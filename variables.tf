@@ -1,14 +1,14 @@
 variable "config_file" {
-    type = string
-    description = "config file"
+  type        = string
+  description = "config file"
 }
 
 variable "github_token" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "nuget_pat" {
-  type    = string
+  type      = string
   sensitive = true
 }
