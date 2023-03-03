@@ -34,3 +34,13 @@ repo_list:
     visibility: public
     owner: devperimental
     template: nuget-package-template
+  - name: component-queues
+    description: Queue Component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
+  - name: component-storage
+    description: Storage Component Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
