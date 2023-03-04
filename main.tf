@@ -46,10 +46,10 @@ resource "github_repository" "standard-repo" {
   name        = each.value.name
   description = each.value.description
   visibility  = each.value.visibility
-  has_issues = true
+  has_issues  = true
 }
 
-resource "github_branch_protection" "repo-protection" {
+resource "github_branch_protection" "standard-repo-protection" {
   for_each = {
     for repo in local.repo_list : repo.name => repo
     if repo.template != null
