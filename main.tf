@@ -33,7 +33,7 @@ resource "github_branch_protection" "template-repo" {
   required_pull_request_reviews {
     dismiss_stale_reviews           = true
     required_approving_review_count = 0
-    restrict_dismissals             = true
+    restrict_dismissals             = false
   }
 }
 
