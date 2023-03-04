@@ -3,7 +3,7 @@ locals {
   # converts all the repos into a list of maps
   repo_list = yamldecode(file("${path.root}/${var.config_file}"))["repo_list"]
 
-  standard_repo_list = flatten([for repo in locals.repo_list :
+  standard_repo_list = flatten([for repo in local.repo_list :
     {
       "name"        = repo.name
       "description" = repo.description
