@@ -44,3 +44,21 @@ repo_list:
     visibility: public
     owner: devperimental
     template: nuget-package-template
+  - name: frontend-portal-api
+    description: Front End Portal API Repository
+    visibility: public
+    owner: devperimental
+  - name: frontend-management-api
+    description: Front End Management API Repository
+    visibility: public
+    owner: devperimental
+  - name: frontend-client-api
+    description: Front End Client API Repository
+    visibility: public
+    owner: devperimental
+  - name: component-api-extensions
+    description: API Extension Repository
+    visibility: public
+    owner: devperimental
+    template: nuget-package-template
+  
