@@ -6,7 +6,7 @@ locals {
 resource "github_repository" "template-repo" {
   for_each = {
     for repo in local.repo_list : repo.name => repo
-    if repo.template != null
+    if repo.template != ""
   }
 
   name        = each.value.name
@@ -22,7 +22,7 @@ resource "github_repository" "template-repo" {
 resource "github_branch_protection" "repo-protection" {
   for_each = {
     for repo in local.repo_list : repo.name => repo
-    if repo.template != null
+    if repo.template != ""
   }
 
   repository_id    = github_repository.template-repo[each.key].node_id
@@ -40,7 +40,7 @@ resource "github_branch_protection" "repo-protection" {
 resource "github_repository" "standard-repo" {
   for_each = {
     for repo in local.repo_list : repo.name => repo
-    if repo.template == null
+    if repo.template == ""
   }
 
   name        = each.value.name
@@ -52,7 +52,7 @@ resource "github_repository" "standard-repo" {
 resource "github_branch_protection" "standard-repo-protection" {
   for_each = {
     for repo in local.repo_list : repo.name => repo
-    if repo.template == null
+    if repo.template == ""
   }
 
   repository_id    = github_repository.template-repo[each.key].node_id

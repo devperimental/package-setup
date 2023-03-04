@@ -48,14 +48,17 @@ repo_list:
     description: Front End Portal API Repository
     visibility: public
     owner: devperimental
+    template: 
   - name: frontend-management-api
     description: Front End Management API Repository
     visibility: public
     owner: devperimental
+    template: 
   - name: frontend-client-api
     description: Front End Client API Repository
     visibility: public
     owner: devperimental
+    template: 
   - name: component-api-extensions
     description: API Extension Repository
     visibility: public
