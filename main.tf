@@ -52,7 +52,7 @@ resource "github_repository" "standard-repo" {
 resource "github_branch_protection" "standard-repo-protection" {
   for_each = {
     for repo in local.repo_list : repo.name => repo
-    if repo.template != null
+    if repo.template == null
   }
 
   repository_id    = github_repository.template-repo[each.key].node_id
