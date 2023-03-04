@@ -66,7 +66,7 @@ resource "github_branch_protection" "standard-repo-protection" {
     if repo.template == null
   }
 
-  repository_id    = github_repository.template-repo[each.key].node_id
+  repository_id    = github_repository.standard-repo[each.key].node_id
   pattern          = "main"
   enforce_admins   = true
   allows_deletions = true
