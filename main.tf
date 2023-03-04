@@ -19,7 +19,37 @@ resource "github_repository" "template-repo" {
   has_issues = true
 }
 
-resource "github_branch_protection" "template-repo" {
+resource "github_branch_protection" "repo-protection" {
+  for_each = {
+    for repo in local.repo_list : repo.name => repo
+    if repo.template != null
+  }
+
+  repository_id    = github_repository.template-repo[each.key].node_id
+  pattern          = "main"
+  enforce_admins   = true
+  allows_deletions = true
+
+  required_pull_request_reviews {
+    dismiss_stale_reviews           = true
+    required_approving_review_count = 0
+    restrict_dismissals             = false
+  }
+}
+
+resource "github_repository" "standard-repo" {
+  for_each = {
+    for repo in local.repo_list : repo.name => repo
+    if repo.template == null
+  }
+
+  name        = each.value.name
+  description = each.value.description
+  visibility  = each.value.visibility
+  has_issues = true
+}
+
+resource "github_branch_protection" "repo-protection" {
   for_each = {
     for repo in local.repo_list : repo.name => repo
     if repo.template != null
@@ -54,7 +84,6 @@ resource "github_actions_secret" "repo_secret" {
 
   for_each = {
     for repo in local.repo_list : repo.name => repo
-    if repo.template != null
   }
 
   repository      = each.value.name
