@@ -61,4 +61,9 @@ repo_list:
     visibility: public
     owner: devperimental
     template: nuget-package-template
+  - name: signup-validator-api
+    description: Signup Validator API Repository
+    visibility: public
+    owner: devperimental
+    template: frontend-management-api
   
